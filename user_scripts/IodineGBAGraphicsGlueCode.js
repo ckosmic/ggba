@@ -175,7 +175,7 @@ GlueCodeGfx.prototype.graphicsBlit = function () {
     this.canvasLastHeight = this.offscreenHeight;
     if (this.offscreenWidth == this.onscreenWidth && this.offscreenHeight == this.onscreenHeight) {
         //Canvas does not need to scale, draw directly to final:
-        this.drawContextOnscreen.putImageData(this.canvasBuffer, 0, 0);
+        //this.drawContextOnscreen.putImageData(this.canvasBuffer, 0, 0);
     }
     this.drawContextOnscreen.putImageData(this.canvasBuffer, 0, 0);
  /*
