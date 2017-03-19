@@ -151,7 +151,7 @@ function downloadROM(gamename) {
 function downloadURLROM(gamename) {
     Iodine.pause();
     showTempString("Downloading \"" + games[gamename] + ".\"");
-    downloadFile(gamename, registerROM);
+    downloadURLFile(gamename, registerROM);
 }
 function registerROM() {
     clearTempString();
