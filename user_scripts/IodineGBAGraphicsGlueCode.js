@@ -13,7 +13,7 @@ function GlueCodeGfx() {
     this.graphicsFound = 0;                   //Do we have graphics output sink found yet?
     this.offscreenWidth = 240;                //Width of the GBA screen.
     this.offscreenHeight = 160;               //Height of the GBA screen.
-    this.doSmoothing = true;
+    this.doSmoothing = false;
     //Cache some frame buffer lengths:
     var offscreenRGBCount = this.offscreenWidth * this.offscreenHeight * 3;
     this.swizzledFrameFree = [getUint8Array(offscreenRGBCount), getUint8Array(offscreenRGBCount)];
