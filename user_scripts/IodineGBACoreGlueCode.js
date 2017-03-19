@@ -148,6 +148,11 @@ function downloadROM(gamename) {
     showTempString("Downloading \"" + games[gamename] + ".\"");
     downloadFile("Binaries/" + gamename + ".gba", registerROM);
 }
+function downloadURLROM(gamename) {
+    Iodine.pause();
+    showTempString("Downloading \"" + games[gamename] + ".\"");
+    downloadFile(gamename, registerROM);
+}
 function registerROM() {
     clearTempString();
     processDownload(this, attachROM);
