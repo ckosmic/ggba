@@ -36,19 +36,19 @@ GlueCodeGfx.prototype.recomputeDimension = function () {
         //Set target as unscaled:
         //this.onscreenWidth = this.canvas.width = this.offscreenWidth;
         //this.onscreenHeight = this.canvas.height = this.offscreenHeight;
-     this.onscreenWidth = 240px;
-     this.onscreenHeight = 160px;
-     this.canvas.width = 240px;
-     this.canvas.height = 160px;
+     this.onscreenWidth = 240;
+     this.onscreenHeight = 160;
+     this.canvas.width = 240;
+     this.canvas.height = 160;
     }
     else {
         //Set target canvas as scaled:
         //this.onscreenWidth = this.canvas.width = this.canvas.clientWidth;
         //this.onscreenHeight = this.canvas.height = this.canvas.clientHeight;
-     this.onscreenWidth = 240px;
-     this.onscreenHeight = 160px;
-     this.canvas.width = 240px;
-     this.canvas.height = 160px;
+     this.onscreenWidth = 240;
+     this.onscreenHeight = 160;
+     this.canvas.width = 240;
+     this.canvas.height = 160;
     }
 }
 GlueCodeGfx.prototype.initializeCanvasTarget = function () {
