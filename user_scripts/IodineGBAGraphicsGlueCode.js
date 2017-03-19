@@ -167,17 +167,17 @@ GlueCodeGfx.prototype.requestDraw = function () {
     }
 }
 GlueCodeGfx.prototype.graphicsBlit = function () {
+    this.canvasLastWidth = this.offscreenWidth;
+    this.canvasLastHeight = this.offscreenHeight;
     if (this.canvasLastWidth != this.canvas.clientWidth || this.canvasLastHeight != this.canvas.clientHeight) {
         //this.recomputeDimension();
         this.setSmoothScaling(this.doSmoothing);
     }
-    this.canvasLastWidth = this.offscreenWidth;
-    this.canvasLastHeight = this.offscreenHeight;
     if (this.offscreenWidth == this.onscreenWidth && this.offscreenHeight == this.onscreenHeight) {
         //Canvas does not need to scale, draw directly to final:
-        //this.drawContextOnscreen.putImageData(this.canvasBuffer, 0, 0);
+        this.drawContextOnscreen.putImageData(this.canvasBuffer, 0, 0);
     }
-    this.drawContextOnscreen.putImageData(this.canvasBuffer, 0, 0);
+    //this.drawContextOnscreen.putImageData(this.canvasBuffer, 0, 0);
  /*
     else {
         //Canvas needs to scale, draw to offscreen first:
