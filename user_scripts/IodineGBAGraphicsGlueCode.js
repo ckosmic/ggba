@@ -167,10 +167,10 @@ GlueCodeGfx.prototype.requestDraw = function () {
     }
 }
 GlueCodeGfx.prototype.graphicsBlit = function () {
-    this.canvasLastWidth = this.offscreenWidth;
-    this.canvasLastHeight = this.offscreenHeight;
+    //this.canvasLastWidth = this.offscreenWidth;
+    //this.canvasLastHeight = this.offscreenHeight;
     if (this.canvasLastWidth != this.canvas.clientWidth || this.canvasLastHeight != this.canvas.clientHeight) {
-        //this.recomputeDimension();
+        this.recomputeDimension();
         this.setSmoothScaling(this.doSmoothing);
     }
     if (this.offscreenWidth == this.onscreenWidth && this.offscreenHeight == this.onscreenHeight) {
