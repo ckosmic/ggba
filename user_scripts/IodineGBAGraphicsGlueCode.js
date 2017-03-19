@@ -177,15 +177,12 @@ GlueCodeGfx.prototype.graphicsBlit = function () {
         //Canvas does not need to scale, draw directly to final:
         this.drawContextOnscreen.putImageData(this.canvasBuffer, 0, 0);
     }
-    //this.drawContextOnscreen.putImageData(this.canvasBuffer, 0, 0);
- /*
     else {
         //Canvas needs to scale, draw to offscreen first:
         this.drawContextOffscreen.putImageData(this.canvasBuffer, 0, 0);
         //Scale offscreen canvas image onto the final:
         this.drawContextOnscreen.drawImage(this.canvasOffscreen, 0, 0, this.onscreenWidth, this.onscreenHeight);
     }
-    */
 }
 GlueCodeGfx.prototype.initializeGraphicsBuffer = function () {
     //Initialize the first frame to a white screen:
