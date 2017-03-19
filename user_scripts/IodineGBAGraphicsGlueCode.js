@@ -168,7 +168,7 @@ GlueCodeGfx.prototype.requestDraw = function () {
 }
 GlueCodeGfx.prototype.graphicsBlit = function () {
     if (this.canvasLastWidth != this.canvas.clientWidth || this.canvasLastHeight != this.canvas.clientHeight) {
-        this.recomputeDimension();
+        //this.recomputeDimension();
         this.setSmoothScaling(this.doSmoothing);
     }
     if (this.offscreenWidth == this.onscreenWidth && this.offscreenHeight == this.onscreenHeight) {
