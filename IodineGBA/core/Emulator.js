@@ -45,7 +45,7 @@ function GameBoyAdvanceEmulator() {
     this.audioNumSamplesTotal = 0;            //Buffer size.
     this.calculateTimings();                  //Calculate some multipliers against the core emulator timer.
     this.generateCoreExposed();               //Generate a limit API for the core to call this shell object.
- print(settings.timerIntervalRate);
+ print(this.settings.timerIntervalRate);
 }
 GameBoyAdvanceEmulator.prototype.generateCoreExposed = function () {
     var parentObj = this;
