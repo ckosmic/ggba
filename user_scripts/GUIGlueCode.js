@@ -644,18 +644,8 @@ function isSameNode(oCheck1, oCheck2) {
 	return (typeof oCheck1.isSameNode == "function") ? oCheck1.isSameNode(oCheck2) : (oCheck1 === oCheck2);
 }
 function addEvent(sEvent, oElement, fListener) {
-    try {
-        oElement.addEventListener(sEvent, fListener, false);
-    }
-    catch (error) {
-        oElement.attachEvent("on" + sEvent, fListener);    //Pity for IE.
-    }
+    oElement.addEventListener(sEvent, fListener, false);
 }
 function removeEvent(sEvent, oElement, fListener) {
-    try {
-        oElement.removeEventListener(sEvent, fListener, false);
-    }
-    catch (error) {
-        oElement.detachEvent("on" + sEvent, fListener);    //Pity for IE.
-    }
+    oElement.removeEventListener(sEvent, fListener, false);
 }
