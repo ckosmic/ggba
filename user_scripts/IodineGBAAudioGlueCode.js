@@ -102,11 +102,11 @@ GlueCodeMixerInput.prototype.initialize = function (channelCount, sampleRate, bu
 GlueCodeMixerInput.prototype.register = function (volume) {
     this.mixer.appendInput(this);
 }
-function ChangeVolume(volume) {
-    this.changeVolume(volume);
-}
 GlueCodeMixerInput.prototype.changeVolume = function (volume) {
     this.volume = volume;
+}
+function ChangeVolume(volume) {
+    this.changeVolume(volume);
 }
 GlueCodeMixerInput.prototype.prepareShift = function () {
     this.buffer.resampleRefill();
