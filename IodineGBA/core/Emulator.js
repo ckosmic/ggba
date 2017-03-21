@@ -20,6 +20,7 @@ function GameBoyAdvanceEmulator() {
         "metricCollectionMinimum":30,       //How many cycles to collect before determining speed.
         "dynamicSpeed":true                 //Whether to actively change the target speed for best user experience.
     }
+    this.audioEnabled = true;
     this.audioFound = false;                  //Do we have audio output sink found yet?
     this.loaded = false;                      //Did we initialize IodineGBA?
     this.faultFound = false;                  //Did we run into a fatal error?
@@ -286,6 +287,7 @@ GameBoyAdvanceEmulator.prototype.requestDraw = function () {
 }
 GameBoyAdvanceEmulator.prototype.enableAudio = function () {
     if (!this.audioFound && this.audio) {
+        this.audioEnabled = true;
         //Calculate the variables for the preliminary downsampler first:
         this.audioResamplerFirstPassFactor = Math.max(Math.min(Math.floor(this.clocksPerSecond / 44100), Math.floor(0x7FFFFFFF / 0x3FF)), 1);
         this.audioDownSampleInputDivider = (2 / 0x3FF) / this.audioResamplerFirstPassFactor;
@@ -305,6 +307,7 @@ GameBoyAdvanceEmulator.prototype.enableAudio = function () {
 }
 GameBoyAdvanceEmulator.prototype.disableAudio = function () {
     if (this.audioFound) {
+        this.audioEnabled = false;
         this.audio.unregister();
         this.audioSetState(false);
         this.calculateTimings();    //Re-Fix timing if it was adjusted by our audio code.
