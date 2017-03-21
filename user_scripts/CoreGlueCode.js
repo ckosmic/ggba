@@ -115,6 +115,15 @@ function registerIodineHandler() {
         IodineGUI.Iodine = new GameBoyAdvanceEmulator();
     }
 }
+function showTempString(textString) {
+    document.getElementById("tempMessage").style.display = "block";
+    document.getElementById("tempMessage").textContent = textString;
+}
+function downloadURLROM(gamename) {
+    IodineGUI.Iodine.pause();
+    showTempString("Downloading \"" + games[gamename] + ".\"");
+    downloadURLFile(gamename, registerROM);
+}
 function registerBeforeUnloadHandler(e) {
     IodineGUI.Iodine.pause();
     if (e.preventDefault) {
