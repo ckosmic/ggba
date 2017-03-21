@@ -544,7 +544,7 @@ function clearTempString() {
     document.getElementById("tempMessage").style.display = "none";
 }
 function resizeCanvasFunc() {
-    var container = document.getElementById("main");
+    /*var container = document.getElementById("main");
     var containerHeight = container.clientHeight || container.offsetHeight || 0;
     var containerWidth = container.clientWidth || container.offsetWidth || 0;
     if (containerHeight > 0 && containerWidth > 0) {
@@ -555,7 +555,7 @@ function resizeCanvasFunc() {
         var width = Math.min(maxWidth, containerWidth);
         canvas.style.width = width + "px";
         canvas.style.height = height + "px";
-    }
+    }*/
 }
 function rebuildSavesMenu(e) {
     if (didNotEnter(document.getElementById("saves_menu_container"), e)) {
