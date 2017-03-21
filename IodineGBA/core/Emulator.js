@@ -10,7 +10,6 @@
  */
 function GameBoyAdvanceEmulator() {
     this.settings = {
-<<<<<<< HEAD
         SKIPBoot:false,                   //Skip the BIOS boot screen.
         audioBufferUnderrunLimit:100,     //Audio buffer minimum span amount over x milliseconds.
         audioBufferDynamicLimit:32,       //Audio buffer dynamic minimum span amount over x milliseconds.
@@ -23,7 +22,6 @@ function GameBoyAdvanceEmulator() {
     };
     this.audioFound = 0;                      //Do we have audio output sink found yet?
     this.emulatorStatus = 0x10;               //{paused, saves loaded, fault found, loaded}
-=======
         "SKIPBoot":true,                   //Skip the BIOS boot screen.
         "audioVolume":1,                    //Starting audio volume.
         "audioBufferUnderrunLimit":8,       //Audio buffer minimum span amount over x interpreter iterations.
@@ -40,7 +38,6 @@ function GameBoyAdvanceEmulator() {
     this.paused = true;                       //Are we paused?
     this.offscreenWidth = 240;                //Width of the GBA screen.
     this.offscreenHeight = 160;               //Height of the GBA screen.
->>>>>>> origin/gh-pages
     this.BIOS = [];                           //Initialize BIOS as not existing.
     this.ROM = [];                            //Initialize BIOS as not existing.
     this.audioUpdateState = 1;                //Do we need to update the sound core with new info?
