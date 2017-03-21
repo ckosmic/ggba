@@ -644,8 +644,8 @@ function isSameNode(oCheck1, oCheck2) {
 	return (typeof oCheck1.isSameNode == "function") ? oCheck1.isSameNode(oCheck2) : (oCheck1 === oCheck2);
 }
 function addEvent(sEvent, oElement, fListener) {
-    oElement.addEventListener(sEvent, fListener, false);
+    //oElement.addEventListener(sEvent, fListener, false);
 }
 function removeEvent(sEvent, oElement, fListener) {
-    oElement.removeEventListener(sEvent, fListener, false);
+    //oElement.removeEventListener(sEvent, fListener, false);
 }
