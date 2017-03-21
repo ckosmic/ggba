@@ -121,7 +121,7 @@ function showTempString(textString) {
 }
 function downloadURLROM(gamename) {
     IodineGUI.Iodine.pause();
-    showTempString("Downloading \"" + games[gamename] + ".\"");
+    showTempString("Downloading game over URL");
     downloadURLFile(gamename, registerROM);
 }
 function registerBeforeUnloadHandler(e) {
