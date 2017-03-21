@@ -10,7 +10,7 @@
  */
 function GameBoyAdvanceEmulator() {
     this.settings = {
-        "SKIPBoot":false,                   //Skip the BIOS boot screen.
+        "SKIPBoot":true,                   //Skip the BIOS boot screen.
         "audioVolume":1,                    //Starting audio volume.
         "audioBufferUnderrunLimit":8,       //Audio buffer minimum span amount over x interpreter iterations.
         "audioBufferDynamicLimit":2,        //Audio buffer dynamic minimum span amount over x interpreter iterations.
