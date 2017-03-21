@@ -11,14 +11,14 @@
 function GameBoyAdvanceEmulator() {
     this.settings = {
         "SKIPBoot":true,                   //Skip the BIOS boot screen.
-        "audioVolume":2,                    //Starting audio volume.
+        "audioVolume":1,                    //Starting audio volume.
         "audioBufferUnderrunLimit":8,       //Audio buffer minimum span amount over x interpreter iterations.
         "audioBufferDynamicLimit":2,        //Audio buffer dynamic minimum span amount over x interpreter iterations.
         "audioBufferSize":20,               //Audio buffer maximum span amount over x interpreter iterations.
         "timerIntervalRate":16,             //How often the emulator core is called into (in milliseconds).
         "emulatorSpeed":1,                  //Speed multiplier of the emulator.
         "metricCollectionMinimum":30,       //How many cycles to collect before determining speed.
-        "dynamicSpeed":true                 //Whether to actively change the target speed for best user experience.
+        "dynamicSpeed":false                 //Whether to actively change the target speed for best user experience.
     }
     this.audioFound = false;                  //Do we have audio output sink found yet?
     this.loaded = false;                      //Did we initialize IodineGBA?
