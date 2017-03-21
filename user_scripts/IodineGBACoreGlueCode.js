@@ -118,8 +118,8 @@ var MixerInput = null;
 var timerID = null;
 window.onload = function () {
     if (!games[location.hash.substr(1)]) {
-        alert("Invalid game request!");
-        return;
+        //alert("Invalid game request!");
+        //return;
     }
     //Initialize Iodine:
     Iodine = new GameBoyAdvanceEmulator();
@@ -141,12 +141,17 @@ function downloadBIOS() {
 }
 function registerBIOS() {
     processDownload(this, attachBIOS);
-    downloadROM(location.hash.substr(1));
+    //downloadROM(location.hash.substr(1));
 }
 function downloadROM(gamename) {
     Iodine.pause();
     showTempString("Downloading \"" + games[gamename] + ".\"");
     downloadFile("Binaries/" + gamename + ".gba", registerROM);
+}
+function downloadURLROM(gamename) {
+    Iodine.pause();
+    showTempString("Downloading \"" + games[gamename] + ".\"");
+    downloadURLFile(gamename, registerROM);
 }
 function registerROM() {
     clearTempString();

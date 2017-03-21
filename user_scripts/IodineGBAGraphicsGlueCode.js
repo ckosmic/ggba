@@ -13,7 +13,7 @@ function GlueCodeGfx() {
     this.graphicsFound = 0;                   //Do we have graphics output sink found yet?
     this.offscreenWidth = 240;                //Width of the GBA screen.
     this.offscreenHeight = 160;               //Height of the GBA screen.
-    this.doSmoothing = true;
+    this.doSmoothing = false;
     //Cache some frame buffer lengths:
     var offscreenRGBCount = this.offscreenWidth * this.offscreenHeight * 3;
     this.swizzledFrameFree = [getUint8Array(offscreenRGBCount), getUint8Array(offscreenRGBCount)];
@@ -34,19 +34,23 @@ GlueCodeGfx.prototype.recomputeDimension = function () {
     this.canvasLastHeight = this.canvas.clientHeight;
     if (window.mozRequestAnimationFrame) {    //Sniff out firefox for selecting this path.
         //Set target as unscaled:
-        this.onscreenWidth = this.canvas.width = this.offscreenWidth;
-        this.onscreenHeight = this.canvas.height = this.offscreenHeight;
+        //this.onscreenWidth = this.canvas.width = this.offscreenWidth;
+        //this.onscreenHeight = this.canvas.height = this.offscreenHeight;
     }
     else {
         //Set target canvas as scaled:
-        this.onscreenWidth = this.canvas.width = this.canvas.clientWidth;
-        this.onscreenHeight = this.canvas.height = this.canvas.clientHeight;
+        //this.onscreenWidth = this.canvas.width = this.canvas.clientWidth;
+        //this.onscreenHeight = this.canvas.height = this.canvas.clientHeight;
     }
+     this.onscreenWidth = this.offscreenWidth;
+     this.onscreenHeight = this.offscreenHeight;
+     this.canvas.width = this.offscreenWidth;
+     this.canvas.height = this.offscreenHeight;
 }
 GlueCodeGfx.prototype.initializeCanvasTarget = function () {
     try {
         //Obtain dimensional information:
-        this.recomputeDimension();
+        //this.recomputeDimension();
         //Get handles on the canvases:
         this.canvasOffscreen = document.createElement("canvas");
         this.canvasOffscreen.width = this.offscreenWidth;
@@ -163,6 +167,8 @@ GlueCodeGfx.prototype.requestDraw = function () {
     }
 }
 GlueCodeGfx.prototype.graphicsBlit = function () {
+    //this.canvasLastWidth = this.offscreenWidth;
+    //this.canvasLastHeight = this.offscreenHeight;
     if (this.canvasLastWidth != this.canvas.clientWidth || this.canvasLastHeight != this.canvas.clientHeight) {
         this.recomputeDimension();
         this.setSmoothScaling(this.doSmoothing);

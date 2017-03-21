@@ -65,6 +65,14 @@ function downloadFile(fileName, registrationHandler) {
     ajax.overrideMimeType("text/plain; charset=x-user-defined");
     ajax.send(null);
 }
+function downloadURLFile(fileName, registrationHandler) {
+    var ajax = new XMLHttpRequest();
+    ajax.onload = registrationHandler;
+    ajax.open("GET", fileName, true);
+    ajax.responseType = "arraybuffer";
+    ajax.overrideMimeType("text/plain; charset=x-user-defined");
+    ajax.send(null);
+}
 function processDownload(parentObj, attachHandler) {
     try {
         attachHandler(new Uint8Array(parentObj.response));
