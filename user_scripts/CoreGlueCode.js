@@ -119,10 +119,21 @@ function showTempString(textString) {
     document.getElementById("tempMessage").style.display = "block";
     document.getElementById("tempMessage").textContent = textString;
 }
+function clearTempString() {
+    document.getElementById("tempMessage").style.display = "none";
+}
 function downloadURLROM(gamename) {
     IodineGUI.Iodine.pause();
     showTempString("Downloading game over URL");
     downloadURLFile(gamename, registerROM);
+}
+function registerROM() {
+    clearTempString();
+    processDownload(this, attachROM);
+    if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/iPad/i)) {
+        Iodine.disableAudio();
+    }
+    Iodine.play();
 }
 function registerBeforeUnloadHandler(e) {
     IodineGUI.Iodine.pause();
