@@ -22,22 +22,6 @@ function GameBoyAdvanceEmulator() {
     };
     this.audioFound = 0;                      //Do we have audio output sink found yet?
     this.emulatorStatus = 0x10;               //{paused, saves loaded, fault found, loaded}
-        "SKIPBoot":true,                   //Skip the BIOS boot screen.
-        "audioVolume":1,                    //Starting audio volume.
-        "audioBufferUnderrunLimit":8,       //Audio buffer minimum span amount over x interpreter iterations.
-        "audioBufferDynamicLimit":2,        //Audio buffer dynamic minimum span amount over x interpreter iterations.
-        "audioBufferSize":20,               //Audio buffer maximum span amount over x interpreter iterations.
-        "timerIntervalRate":16,             //How often the emulator core is called into (in milliseconds).
-        "emulatorSpeed":1,                  //Speed multiplier of the emulator.
-        "metricCollectionMinimum":30,       //How many cycles to collect before determining speed.
-        "dynamicSpeed":false                 //Whether to actively change the target speed for best user experience.
-    }
-    this.audioFound = false;                  //Do we have audio output sink found yet?
-    this.loaded = false;                      //Did we initialize IodineGBA?
-    this.faultFound = false;                  //Did we run into a fatal error?
-    this.paused = true;                       //Are we paused?
-    this.offscreenWidth = 240;                //Width of the GBA screen.
-    this.offscreenHeight = 160;               //Height of the GBA screen.
     this.BIOS = [];                           //Initialize BIOS as not existing.
     this.ROM = [];                            //Initialize BIOS as not existing.
     this.audioUpdateState = 1;                //Do we need to update the sound core with new info?
@@ -53,7 +37,6 @@ function GameBoyAdvanceEmulator() {
     this.dynamicSpeedRefresh = false;         //Whether speed is allowed to be changed dynamically in the current cycle.
     this.calculateTimings();                  //Calculate some multipliers against the core emulator timer.
     this.generateCoreExposed();               //Generate a limit API for the core to call this shell object.
- console.log(this.settings.timerIntervalRate);
 }
 GameBoyAdvanceEmulator.prototype.generateCoreExposed = function () {
     var parentObj = this;
@@ -484,10 +467,3 @@ GameBoyAdvanceEmulator.prototype.toggleDynamicSpeed = function (dynamicSpeed) {
 GameBoyAdvanceEmulator.prototype.toggleOffthreadGraphics = function (offthreadGfxEnabled) {
     this.settings.offthreadGfxEnabled = !!offthreadGfxEnabled;
 }
-<<<<<<< HEAD
-=======
-GameBoyAdvanceEmulator.prototype.disableDynamicSpeed = function () {
-    this.settings.dynamicSpeed = false;
-    this.setSpeed(1);
-}
->>>>>>> origin/gh-pages
