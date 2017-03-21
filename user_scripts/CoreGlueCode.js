@@ -124,7 +124,7 @@ function registerBeforeUnloadHandler(e) {
 }
 function registerTimerHandler() {
     IodineGUI.defaults.timerRate = 16;
-    IodineGUI.Iodine.setIntervalRate(IodineGUI.defaults.timerRate | 0);
+    //IodineGUI.Iodine.setIntervalRate(IodineGUI.defaults.timerRate | 0);
 }
 function initTimer() {
     IodineGUI.coreTimerID = setInterval(function () {
