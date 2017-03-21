@@ -73,7 +73,7 @@ GameBoyAdvanceEmulator.prototype.play = function () {
         this.invalidateMetrics();
         this.setBufferSpace();
         //Report new status back:
-        this.playStatusCallback(1);
+        //this.playStatusCallback(1);
     }
 }
 GameBoyAdvanceEmulator.prototype.pause = function () {
