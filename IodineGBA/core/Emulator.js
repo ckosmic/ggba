@@ -313,6 +313,15 @@ GameBoyAdvanceEmulator.prototype.disableAudio = function () {
         this.calculateTimings();    //Re-Fix timing if it was adjusted by our audio code.
     }
 }
+GameBoyAdvanceEmulator.prototype.toggleAudio = function () {
+ if (this.audioFound) {
+  if(this.audioEnabled == true) {
+   this.disableAudio();
+  } else {
+   this.enableAudio();
+  }
+ }
+}
 GameBoyAdvanceEmulator.prototype.initializeAudioBuffering = function () {
     this.audioDestinationPosition = 0;
     this.audioBufferContainAmount = Math.max((this.CPUCyclesPerIteration | 0) * (this.settings.audioBufferUnderrunLimit | 0) / this.audioResamplerFirstPassFactor, 4096) << 1;
