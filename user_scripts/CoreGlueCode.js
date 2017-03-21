@@ -74,7 +74,7 @@ var IodineGUI = {
 };
 window.onload = function () {
     //Populate settings:
-    registerDefaultSettings();
+    //registerDefaultSettings();
     //Initialize Iodine:
     registerIodineHandler();
     //Initialize the timer:
@@ -86,9 +86,9 @@ window.onload = function () {
     //Register the save handler callbacks:
     registerSaveHandlers();
     //Register the GUI controls.
-    registerGUIEvents();
+    //registerGUIEvents();
     //Register GUI settings.
-    registerGUISettings();
+    //registerGUISettings();
 }
 function registerIodineHandler() {
     try {
