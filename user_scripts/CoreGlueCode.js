@@ -89,6 +89,14 @@ window.onload = function () {
     //registerGUIEvents();
     //Register GUI settings.
     //registerGUISettings();
+    downloadBIOS();
+}
+function downloadBIOS() {
+    downloadFile("Binaries/gba_bios.bin", registerBIOS);
+}
+function registerBIOS() {
+    processDownload(this, attachBIOS);
+    //downloadROM(location.hash.substr(1));
 }
 function registerIodineHandler() {
     try {
