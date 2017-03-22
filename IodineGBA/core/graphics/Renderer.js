@@ -43,7 +43,7 @@ if (__VIEWS_SUPPORTED__) {
             //BIOS entered the ROM at line 0x7C:
             this.lastUnrenderedLine = 0x7C;
         }
-        this.backdrop = 0x3A00000;
+        this.backdrop = 0x0000000;
     }
 }
 else {
@@ -73,7 +73,7 @@ else {
             //BIOS entered the ROM at line 0x7C:
             this.lastUnrenderedLine = 0x7C;
         }
-        this.backdrop = 0x3A00000;
+        this.backdrop = 0x0000000;
     }
 }
 GameBoyAdvanceGraphicsRenderer.prototype.generateRenderers = function () {
