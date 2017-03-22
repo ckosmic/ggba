@@ -114,14 +114,14 @@ GameBoyAdvanceGraphicsRenderer.prototype.initializeRenderers = function () {
 GameBoyAdvanceGraphicsRenderer.prototype.initializePaletteStorage = function () {
     //Both BG and OAM in unified storage:
     this.palette256 = getInt32Array(0x100);
-    this.palette256[0] = 0x3800000;
+    this.palette256[0] = 0x0000000;
     this.paletteOBJ256 = getInt32Array(0x100);
-    this.paletteOBJ256[0] = 0x3800000;
+    this.paletteOBJ256[0] = 0x0000000;
     this.palette16 = getInt32Array(0x100);
     this.paletteOBJ16 = getInt32Array(0x100);
     for (var index = 0; (index | 0) < 0x10; index = ((index | 0) + 1) | 0) {
-        this.palette16[index << 4] = 0x3800000;
-        this.paletteOBJ16[index << 4] = 0x3800000;
+        this.palette16[index << 4] = 0x0000000;
+        this.paletteOBJ16[index << 4] = 0x0000000;
     }
 }
 GameBoyAdvanceGraphicsRenderer.prototype.ensureFraming = function () {
