@@ -46,6 +46,7 @@ function GameBoyAdvanceEmulator() {
     this.audioNumSamplesTotal = 0;            //Buffer size.
     this.calculateTimings();                  //Calculate some multipliers against the core emulator timer.
     this.generateCoreExposed();               //Generate a limit API for the core to call this shell object.
+    this.name = "";
 }
 GameBoyAdvanceEmulator.prototype.generateCoreExposed = function () {
     var parentObj = this;
@@ -133,12 +134,15 @@ GameBoyAdvanceEmulator.prototype.attachBIOS = function (BIOS) {
     this.stop();
     this.BIOS = BIOS;
 }
+GameBoyAdvanceEmulator.prototype.setGameName = function (gameName) {
+ this.name = gameName;
+}
 GameBoyAdvanceEmulator.prototype.getGameName = function () {
     if (!this.faultFound && this.loaded) {
         return this.IOCore.cartridge.name;
     }
     else {
-        return "";
+        return gameName;
     }
 }
 GameBoyAdvanceEmulator.prototype.attachSaveExportHandler = function (handler) {
